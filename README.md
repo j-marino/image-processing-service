@@ -26,7 +26,7 @@ Built for the
 ### 1. Clone the repo and install dependencies
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/j-marino/image-processing-service.git
 cd image-processing-service
 uv sync
 ```
