@@ -11,7 +11,7 @@ from app.config import MAX_BYTE_UPLOAD
 from app.models.user import User
 from app.services.auth.auth import get_password_hash
 from app.services.redis.redis import redis_shared_client
-from app.services.rabbitmq.rabbitmq import get_rabbitmq_channel
+from app.services.rabbitmq_config.rabbitmq import get_rabbitmq_channel
 
 from app.main import app
 import app.routers.images as images_router

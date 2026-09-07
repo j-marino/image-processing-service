@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from slowapi.errors import RateLimitExceeded
 from slowapi import _rate_limit_exceeded_handler
 
-from app.services.rabbitmq.rabbitmq import lifespan
+from app.services.rabbitmq_config.rabbitmq import lifespan
 from app.services.slowapi.slowapi_limiter import limiter
 from app.routers import users, token, images
 

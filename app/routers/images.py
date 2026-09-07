@@ -11,10 +11,10 @@ from app.models.user import User
 from app.schemas.images import ImageResponse, Transformations, ImageRead
 from app.services.bucket.bucket_operations import delete_file, delete_files, get_bucket_image, upload_to_bucket, delete_from_bucket
 from app.services.image.image_db import get_db_image
-from app.services.rabbitmq.job_helper import get_job
-from app.services.rabbitmq.rabbitmq import RabbitMQDep
+from app.services.rabbitmq_config.job_helper import get_job
+from app.services.rabbitmq_config.rabbitmq import RabbitMQDep
 from app.services.redis.redis import cache_image, endpoint_get_cached_image, delete_cached_image, delete_cached_images
-from app.services.rabbitmq.send import publish_image_task
+from app.services.rabbitmq_config.send import publish_image_task
 from app.config import ACCEPTED_FORMATS, MAX_BYTE_UPLOAD
 
 
