@@ -1,0 +1,47 @@
+[project]
+name = "image-processing-service"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "j-marino", email = "juliusmail007@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "pwdlib[argon2]>=0.3.1",
+    "pydantic[email]>=2.13.4",
+    "pydantic-settings>=2.15.0",
+    "pyjwt>=2.13.0",
+    "python-dotenv>=1.2.3",
+    "sqlmodel>=0.0.39",
+    "psycopg2-binary>=2.9.12",
+    "python-multipart>=0.0.32",
+    "numpy>=2.5.2",
+    "pillow>=12.3.0",
+    "opencv-python>=5.0.0.93",
+    "aioboto3>=15.5.0",
+    "types-aiobotocore-s3>=3.9.0",
+    "slowapi>=0.1.10",
+    "asyncpg>=0.31.0",
+    "aio-pika>=10.0.1",
+    "redis[hiredis]>=8.1.0",
+    "requests>=2.34.2",
+    "pytest-asyncio>=1.4.0",
+    "aiosqlite>=0.22.1",
+    "aiomoto>=0.5.4",
+]
+
+[project.scripts]
+image-processing-service = "image_processing_service:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
+filterwarnings = [
+    "ignore::DeprecationWarning:slowapi.extension"
+]
