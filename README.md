@@ -59,6 +59,9 @@ RABBITMQ_USER=X
 RABBITMQ_PASS=X
 RABBITMQ_HOST=X
 RABBITMQ_PORT=X
+
+# locust load test
+MAX_BUCKET_OPERATIONS=10000 # change depending on bucket limits
 ```
 
 - `DB_URL` credentials should match `POSTGRES_USER` / `POSTGRES_PASSWORD` / `POSTGRES_DB` above.
