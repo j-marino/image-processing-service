@@ -5,7 +5,6 @@ from app.dependencies import S3Dep, bucket_settings
 from app.models.image import Image
 
 
-
 # upload file obj
 async def upload_file(file_obj, bucket_file_obj: str, bucket_name: str, image_id: uuid.UUID, s3: S3Dep) -> bool:
     image_id = f'{image_id}'

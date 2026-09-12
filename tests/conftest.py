@@ -1,6 +1,7 @@
 import pytest_asyncio
 import aioboto3
 import boto3
+import pytest
 from aiobotocore.session import AioSession
 from aiomoto import mock_aws
 from httpx import AsyncClient, ASGITransport
@@ -17,9 +18,11 @@ from app.services.auth.auth import get_password_hash
 from app.services.slowapi.slowapi_limiter import limiter
 
 
-limiter.enabled = False
 TEST_BUCKET = bucket_settings.bucket_name
 
+@pytest.fixture(autouse=True)
+def disable_rate_limiting(monkeypatch):
+    monkeypatch.setattr(limiter, "enabled", False)
 
 @pytest_asyncio.fixture(name="session")
 async def session_fixture():
